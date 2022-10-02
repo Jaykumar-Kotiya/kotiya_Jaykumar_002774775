@@ -116,7 +116,5 @@ public class Product {
     }
     public void setEmailId(String emailAddress) {
         this.emailAddress = emailAddress;
-    }
-
-  
+    }  
 }
