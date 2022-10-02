@@ -17,4 +17,14 @@ public class EmployeeHistory {
     public EmployeeHistory() {
         this.history = new ArrayList<Product>();
     }
+
+    public ArrayList<Product> getHistory() {
+        return history;
+    }
+
+    public void setHistory(ArrayList<Product> history) {
+        this.history = history;
+    }
+    
+    
 }
