@@ -5,7 +5,7 @@
 package ui;
 
 import model.EmployeeHistory;
-import model.Product;
+//import model.Product; temp
 
 /**
  *
@@ -16,16 +16,16 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    Product product;
+    
+  //  Product product; //temp
     
     EmployeeHistory history;
     
     public MainJFrame() { 
         initComponents();
         
-        history = new EmployeeHistory();
-        
-        product = new Product();
+        history = new EmployeeHistory();   
+     //   product = new Product();  //temp
     }
 
     /**
@@ -116,14 +116,20 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        CreateJPanel createPanel = new CreateJPanel(product);
+        
+        CreateJpanel createPanel = new CreateJPanel(history);
         splitPane.setRightComponent(createPanel);
+        
+      //  CreateJPanel createPanel = new CreateJPanel(product);    
+       // splitPane.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-        VieweJPanel viewPanel = new VieweJPanel(product);
-        splitPane.setRightComponent(viewPanel);
+      
+        
+     //   VieweJPanel viewPanel = new VieweJPanel(product);   
+     //   splitPane.setRightComponent(viewPanel);
     }//GEN-LAST:event_btnViewActionPerformed
 
     /**

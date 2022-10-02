@@ -5,7 +5,8 @@
 package ui;
 
 import javax.swing.JOptionPane;
-import model.Product;
+import model.EmployeeHistory;
+//import model.Product;
 
 /**
  *
@@ -16,11 +17,11 @@ public class CreateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
-    Product product;
+    EmployeeHistory history;
     
-    public CreateJPanel(Product product) {
+    public CreateJPanel(EmployeeHistory history) {
         initComponents();
-        this.product = product;
+        this.history = history;
     }
 
     /**
