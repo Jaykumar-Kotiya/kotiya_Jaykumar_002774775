@@ -4,6 +4,7 @@
  */
 package ui;
 
+import model.EmployeeHistory;
 import model.Product;
 
 /**
@@ -17,8 +18,13 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     Product product;
     
-    public MainJFrame() {
+    EmployeeHistory history;
+    
+    public MainJFrame() { 
         initComponents();
+        
+        history = new EmployeeHistory();
+        
         product = new Product();
     }
 
@@ -60,19 +66,24 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnView, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                    .addComponent(btnCreate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnView, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCreate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
+
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCreate, btnView});
+
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(btnCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(212, 212, 212)
+                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(150, 150, 150))
+                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(308, Short.MAX_VALUE))
         );
+
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCreate, btnView});
 
         splitPane.setLeftComponent(controlPanel);
 
@@ -80,11 +91,11 @@ public class MainJFrame extends javax.swing.JFrame {
         workAreaPanel.setLayout(workAreaPanelLayout);
         workAreaPanelLayout.setHorizontalGroup(
             workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 411, Short.MAX_VALUE)
+            .addGap(0, 695, Short.MAX_VALUE)
         );
         workAreaPanelLayout.setVerticalGroup(
             workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 328, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(workAreaPanel);
