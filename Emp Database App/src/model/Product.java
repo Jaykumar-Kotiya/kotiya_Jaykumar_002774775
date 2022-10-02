@@ -11,14 +11,14 @@ package model;
 public class Product {
     
     private String name;
-    private String empId;
-    private String age;
+    private int empId;
+    private int age;
     private String gender;
     private String startDate;
     private String level;
     private String teamInfo;
     private String positionTitle;
-    private String phoneNumber;
+    private int phoneNumber;
     private String emailAddress;
     //private String photo;
 
@@ -30,19 +30,19 @@ public class Product {
         this.name = name;
     }
 
-    public String getEmpId() {
+    public int getEmpId() {
         return empId;
     }
 
-    public void setEmpId(String empId) {
+    public void setEmpId(int empId) {
         this.empId = empId;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -78,11 +78,11 @@ public class Product {
         this.positionTitle = positionTitle;
     }
 
-    public String getPhoneNumber() {
+    public int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -104,12 +104,6 @@ public class Product {
     }
     public void setLevel(String level) {
         this.level = level;
-    }
-    public String getCellNo() {
-        return phoneNumber;
-    }
-    public void setCellNo(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
     public String getEmailId() {
         return emailAddress;

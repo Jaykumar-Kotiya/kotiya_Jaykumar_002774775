@@ -26,5 +26,11 @@ public class EmployeeHistory {
         this.history = history;
     }
     
+    public Product addNewEmployee() {
+        
+        Product newEmployees = new Product();
+        history.add(newEmployees);
+        return newEmployees;
+    }
     
 }

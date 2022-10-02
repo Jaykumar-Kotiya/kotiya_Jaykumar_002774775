@@ -213,6 +213,9 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        
+        
+        
         product.setName(txtName.getText());
         product.setEmpId(txtEmpId.getText());
         product.setAge(txtAge.getText());
