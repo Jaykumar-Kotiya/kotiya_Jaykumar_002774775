@@ -4,6 +4,7 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Employee;
 import model.EmployeeHistory;
@@ -170,7 +171,17 @@ public class ViewJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
-        // TODO add your handling code here:
+
+        int selectedRowIndex = tbtEmp.getSelectedRow();
+        
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this, "Please select a row to delete.");
+            return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) tbtEmp.getModel();
+        Employee selectedEmployees = (Employee)model.getValueAt(selectedRowIndex, 0);
+
     }//GEN-LAST:event_btnDelActionPerformed
 
 
@@ -200,7 +211,7 @@ public class ViewJPanel extends javax.swing.JPanel {
       for (Employee vs : history.getHistory()){
           
           Object[] row = new Object[5];
-          row[0] = vs.getName();
+          row[0] = vs;
           row[1] = vs.getEmpId();
           row[2] = vs.getAge();
           row[3] = vs.getGender();
