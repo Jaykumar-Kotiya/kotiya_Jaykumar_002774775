@@ -183,6 +183,10 @@ public class ViewJPanel extends javax.swing.JPanel {
         Employee selectedEmployees = (Employee)model.getValueAt(selectedRowIndex, 0);
         
         history.deleteEmployees(selectedEmployees);
+        
+        JOptionPane.showMessageDialog(this, "Employee detail deleted.");
+        
+        populateTable();
 
     }//GEN-LAST:event_btnDelActionPerformed
 
