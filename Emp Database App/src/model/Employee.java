@@ -8,9 +8,9 @@ package model;
  *
  * @author jkoti
  */
-public class Product {
+public class Employee {
     
-    private String name;
+     private String name;
     private int empId;
     private int age;
     private String gender;
@@ -78,13 +78,13 @@ public class Product {
         this.positionTitle = positionTitle;
     }
 
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
+   // public int getPhoneNumber() {
+  //      return phoneNumber;
+   // }
 
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+  //  public void setPhoneNumber( phoneNumber) {
+   //     this.phoneNumber = phoneNumber;
+  //  }
 
     public String getEmailAddress() {
         return emailAddress;
@@ -93,6 +93,12 @@ public class Product {
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
+ //       public String getEmailId() {
+   //     return emailAddress;
+   // }
+   // public void setEmailId(String emailAddress) {
+   //     this.emailAddress = emailAddress;
+   // }  
     public String getStartDt() {
         return startDate;
     }
@@ -105,10 +111,11 @@ public class Product {
     public void setLevel(String level) {
         this.level = level;
     }
-    public String getEmailId() {
-        return emailAddress;
+    public int getCellNo() {
+        return phoneNumber;
     }
-    public void setEmailId(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }  
+    public void setCellNo(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    
 }

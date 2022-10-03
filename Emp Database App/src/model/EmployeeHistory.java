@@ -12,25 +12,25 @@ import java.util.ArrayList;
  */
 public class EmployeeHistory {
     
-    private ArrayList<Product> history;
+    private ArrayList<Employee> history;
     
     public EmployeeHistory() {
-        this.history = new ArrayList<Product>();
+        this.history = new ArrayList<Employee>();
     }
 
-    public ArrayList<Product> getHistory() {
+    public ArrayList<Employee> getHistory() {
         return history;
     }
 
-    public void setHistory(ArrayList<Product> history) {
+    public void setHistory(ArrayList<Employee> history) {
         this.history = history;
     }
     
-    public Product addNewEmployee() {
+  //  public Employee addNewEmployee() {
         
-        Product newEmployees = new Product();
-        history.add(newEmployees);
-        return newEmployees;
-    }
+   //     Employee newEmployees = newProduct();
+    //    history.add(newEmployees);
+    //    return newEmployees;
+    //}
     
 }

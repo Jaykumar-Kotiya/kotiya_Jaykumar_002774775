@@ -4,7 +4,7 @@
  */
 package ui;
 
-import model.Product;
+
 
 /**
  *
@@ -16,12 +16,11 @@ public class VieweJPanel extends javax.swing.JPanel {
      * Creates new form VieweJPanel
      */
    
-    Product product;
     
-    public VieweJPanel(Product product) {
+    
+    public VieweJPanel() {
         initComponents();
-        this.product = product; 
-        displayEmployee();
+        
     }
 
     /**
@@ -230,16 +229,16 @@ public class VieweJPanel extends javax.swing.JPanel {
 
     private void displayEmployee() {
 
-    txtName.setText(product.getName());
-    txtEmpId.setText(product.getEmpId());
-    txtAge.setText(product.getAge());
-    txtGender.setText(product.getGender());
-    txtStartDt.setText(product.getStartDate());
-    txtLevel.setText(product.getLevel());
-    txtTeamInfo.setText(product.getTeamInfo());
-    txtPositionTitle.setText(product.getPositionTitle());
-    txtCellNo.setText(product.getCellNo());
-    txtEmailId.setText(product.getEmailId());
+   // txtName.setText(product.getName());
+   // txtEmpId.setText(product.getEmpId());
+    //txtAge.setText(product.getAge());
+   // txtGender.setText(product.getGender());
+   // txtStartDt.setText(product.getStartDate());
+   // txtLevel.setText(product.getLevel());
+   // txtTeamInfo.setText(product.getTeamInfo());
+   // txtPositionTitle.setText(product.getPositionTitle());
+   // txtCellNo.setText(product.getCellNo());
+   // txtEmailId.setText(product.getEmailId());
     
 
     }
