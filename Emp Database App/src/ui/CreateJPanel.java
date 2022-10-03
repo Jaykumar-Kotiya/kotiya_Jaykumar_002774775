@@ -4,6 +4,10 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+import model.Employee;
+import model.EmployeeHistory;
+
 /**
  *
  * @author jkoti
@@ -13,8 +17,11 @@ public class CreateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
-    public CreateJPanel() {
+    EmployeeHistory history;
+    
+    public CreateJPanel(EmployeeHistory history) {
         initComponents();
+        this.history = history;
     }
 
     /**
@@ -190,7 +197,46 @@ public class CreateJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+        
+         String name = txtName.getText();
+        int empid = Integer.parseInt(txtEmpId.getText());
+        int age = Integer.parseInt(txtAge.getText());
+        String gender = txtGender.getText();
+        String date = txtDate.getText();
+        String level = txtLevel.getText();
+        String teamInf = txtTeamInfo.getText();
+        String position = txtPosition.getText();
+        int cellno = Integer.parseInt(txtPhone.getText());
+        String email = txtAddress.getText();
+        
+        
+        Employee emp = history.addNewEmployee();
+        emp.setName(name);
+        emp.setEmpId(empid);
+        emp.setAge(age);
+        emp.setGender(gender);
+        emp.setStartDt(date);
+        emp.setLevel(level);
+        emp.setTeamInfo(teamInf);
+        emp.setPositionTitle(position);
+        emp.setCellNo(cellno);
+        emp.setEmailAddress(email);
+        
+        
+        JOptionPane.showMessageDialog(this, "Employee Data Saved. ");
+        
+        txtName.setText(" ");
+        txtEmpId.setText(" ");
+        txtAge.setText(" ");
+        txtGender.setText(" ");
+        txtDate.setText(" ");
+        txtLevel.setText(" ");
+        txtTeamInfo.setText(" ");
+        txtPosition.setText(" ");
+        txtPhone.setText(" ");
+        txtAddress.setText(" ");
+        
+        
     }//GEN-LAST:event_btnSaveActionPerformed
 
 

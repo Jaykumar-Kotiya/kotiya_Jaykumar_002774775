@@ -4,6 +4,8 @@
  */
 package ui;
 
+import model.EmployeeHistory;
+
 /**
  *
  * @author jkoti
@@ -13,8 +15,14 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
+    
+    EmployeeHistory history;
+    
     public MainJFrame() {
         initComponents();
+        
+        history = new EmployeeHistory();
+        
     }
 
     /**
@@ -99,7 +107,11 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        // TODO add your handling code here:
+       
+        CreateJPanel createPanel = new CreateJPanel(history);
+        splitPane.setRightComponent(createPanel);
+        
+        
     }//GEN-LAST:event_btnCreateActionPerformed
 
     /**

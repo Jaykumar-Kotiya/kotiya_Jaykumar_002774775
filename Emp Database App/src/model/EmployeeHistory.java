@@ -26,11 +26,11 @@ public class EmployeeHistory {
         this.history = history;
     }
     
-  //  public Employee addNewEmployee() {
+    public Employee addNewEmployee() {
         
-   //     Employee newEmployees = newProduct();
-    //    history.add(newEmployees);
-    //    return newEmployees;
-    //}
+        Employee newEmployees = new Employee();
+        history.add(newEmployees);
+        return newEmployees;
+    }
     
 }
