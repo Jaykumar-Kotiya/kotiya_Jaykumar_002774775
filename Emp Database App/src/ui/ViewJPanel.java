@@ -181,6 +181,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         
         DefaultTableModel model = (DefaultTableModel) tbtEmp.getModel();
         Employee selectedEmployees = (Employee)model.getValueAt(selectedRowIndex, 0);
+        
+        history.deleteEmployees(selectedEmployees);
 
     }//GEN-LAST:event_btnDelActionPerformed
 
