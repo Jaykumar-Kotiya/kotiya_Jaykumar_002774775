@@ -4,6 +4,8 @@
  */
 package ui;
 
+import javax.swing.table.DefaultTableModel;
+import model.Employee;
 import model.EmployeeHistory;
 
 /**
@@ -21,6 +23,9 @@ public class ViewJPanel extends javax.swing.JPanel {
         initComponents();
         
         this.history = history;
+        
+        populateTable();
+        
     }
 
     /**
@@ -34,7 +39,7 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbtEmp = new javax.swing.JTable();
         txtTeamInfo = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         txtPosition = new javax.swing.JTextField();
@@ -45,14 +50,14 @@ public class ViewJPanel extends javax.swing.JPanel {
         jLabel20 = new javax.swing.JLabel();
         txtLevel = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
+        btnDel = new javax.swing.JButton();
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("View Employee Data");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbtEmp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -68,7 +73,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbtEmp);
 
         jLabel17.setText("Team Info:");
 
@@ -80,17 +85,17 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         jLabel16.setText("Level:");
 
-        jButton1.setText("View");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnViewActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Delete");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnDel.setText("Delete");
+        btnDel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnDelActionPerformed(evt);
             }
         });
 
@@ -121,9 +126,9 @@ public class ViewJPanel extends javax.swing.JPanel {
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(424, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(btnView)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)))
+                        .addComponent(btnDel)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -134,8 +139,8 @@ public class ViewJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnView)
+                    .addComponent(btnDel))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16)
@@ -160,30 +165,50 @@ public class ViewJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnViewActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnDelActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnDel;
+    private javax.swing.JButton btnView;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tbtEmp;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtLevel;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtPosition;
     private javax.swing.JTextField txtTeamInfo;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+
+      DefaultTableModel model = (DefaultTableModel) tbtEmp.getModel();
+      model.setRowCount(0);
+      
+      for (Employee vs : history.getHistory()){
+          
+          Object[] row = new Object[5];
+          row[0] = vs.getName();
+          row[1] = vs.getEmpId();
+          row[2] = vs.getAge();
+          row[3] = vs.getGender();
+          row[4] = vs.getStartDate();
+          
+          model.addRow(row);
+          
+      }
+      
+    }
 }
