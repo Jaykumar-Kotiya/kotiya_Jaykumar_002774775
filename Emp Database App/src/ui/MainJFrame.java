@@ -4,9 +4,6 @@
  */
 package ui;
 
-import model.EmployeeHistory;
-//import model.Product; temp
-
 /**
  *
  * @author jkoti
@@ -16,16 +13,8 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    
-  //  Product product; //temp
-    
-    EmployeeHistory history;
-    
-    public MainJFrame() { 
+    public MainJFrame() {
         initComponents();
-        
-        history = new EmployeeHistory();   
-     //   product = new Product();  //temp
     }
 
     /**
@@ -41,33 +30,28 @@ public class MainJFrame extends javax.swing.JFrame {
         controlPanel = new javax.swing.JPanel();
         btnCreate = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
-        workAreaPanel = new javax.swing.JPanel();
+        workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnCreate.setText("Create");
+        btnCreate.setText("Enter Emp. Inf. ");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
 
-        btnView.setText("View");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
-            }
-        });
+        btnView.setText("View Data");
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnView, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCreate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCreate, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnView, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
 
@@ -76,29 +60,29 @@ public class MainJFrame extends javax.swing.JFrame {
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(212, 212, 212)
-                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addGap(131, 131, 131)
+                .addComponent(btnCreate)
+                .addGap(27, 27, 27)
+                .addComponent(btnView)
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCreate, btnView});
 
         splitPane.setLeftComponent(controlPanel);
 
-        javax.swing.GroupLayout workAreaPanelLayout = new javax.swing.GroupLayout(workAreaPanel);
-        workAreaPanel.setLayout(workAreaPanelLayout);
-        workAreaPanelLayout.setHorizontalGroup(
-            workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
+        workArea.setLayout(workAreaLayout);
+        workAreaLayout.setHorizontalGroup(
+            workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 695, Short.MAX_VALUE)
         );
-        workAreaPanelLayout.setVerticalGroup(
-            workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        workAreaLayout.setVerticalGroup(
+            workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        splitPane.setRightComponent(workAreaPanel);
+        splitPane.setRightComponent(workArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,7 +92,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(splitPane)
         );
 
         pack();
@@ -116,21 +100,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        
-        CreateJpanel createPanel = new CreateJPanel(history);
-        splitPane.setRightComponent(createPanel);
-        
-      //  CreateJPanel createPanel = new CreateJPanel(product);    
-       // splitPane.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
-
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
-      
-        
-     //   VieweJPanel viewPanel = new VieweJPanel(product);   
-     //   splitPane.setRightComponent(viewPanel);
-    }//GEN-LAST:event_btnViewActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,7 +142,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnView;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JSplitPane splitPane;
-    private javax.swing.JPanel workAreaPanel;
+    private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables
-
 }
