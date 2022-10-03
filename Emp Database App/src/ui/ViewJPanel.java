@@ -168,6 +168,17 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
+        
+         int selectedRowIndex = tbtEmp.getSelectedRow();
+        
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this, "Please select a row.");
+            return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) tbtEmp.getModel();
+        Employee selectedEmployees = (Employee)model.getValueAt(selectedRowIndex, 0);
+        
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
