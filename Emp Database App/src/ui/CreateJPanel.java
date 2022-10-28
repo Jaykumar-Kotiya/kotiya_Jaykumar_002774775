@@ -18,7 +18,7 @@ public class CreateJPanel extends javax.swing.JPanel {
      * Creates new form CreateJPanel
      */
     EmployeeHistory history;
-    
+    //passing obje ct name to save data in the array 
     public CreateJPanel(EmployeeHistory history) {
         initComponents();
         this.history = history;
@@ -83,6 +83,12 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
+            }
+        });
+
+        txtPhone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPhoneActionPerformed(evt);
             }
         });
 
@@ -195,7 +201,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         
-         String name = txtName.getText();
+        String name = txtName.getText();
         int empid = Integer.parseInt(txtEmpId.getText());
         int age = Integer.parseInt(txtAge.getText());
         String gender = txtGender.getText();
@@ -221,7 +227,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         
         
         JOptionPane.showMessageDialog(this, "Employee Data Saved. ");
-        
+        // after saving the data text field will be clear.
         txtName.setText(" ");
         txtEmpId.setText(" ");
         txtAge.setText(" ");
@@ -235,6 +241,10 @@ public class CreateJPanel extends javax.swing.JPanel {
         
         
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void txtPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

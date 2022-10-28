@@ -15,7 +15,7 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    
+    //created instance of the object model to store data
     EmployeeHistory history;
     
     public MainJFrame() {

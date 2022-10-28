@@ -18,6 +18,7 @@ public class ViewJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ViewJPanel
      */
+   
     EmployeeHistory history;
     
     public ViewJPanel(EmployeeHistory history) {
@@ -76,6 +77,12 @@ public class ViewJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tbtEmp);
 
+        txtTeamInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTeamInfoActionPerformed(evt);
+            }
+        });
+
         jLabel17.setText("Team Info:");
 
         jLabel18.setText("Position Title:");
@@ -83,6 +90,12 @@ public class ViewJPanel extends javax.swing.JPanel {
         jLabel19.setText("Cell Phone Number:");
 
         jLabel20.setText("Email Address:");
+
+        txtLevel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLevelActionPerformed(evt);
+            }
+        });
 
         jLabel16.setText("Level:");
 
@@ -128,8 +141,9 @@ public class ViewJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(424, Short.MAX_VALUE)
                         .addComponent(btnView)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnDel)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDel)
+                        .addGap(6, 6, 6)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -169,16 +183,20 @@ public class ViewJPanel extends javax.swing.JPanel {
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
         
-         int selectedRowIndex = tbtEmp.getSelectedRow();
+            
         
-        if(selectedRowIndex<0){
-            JOptionPane.showMessageDialog(this, "Please select a row.");
-            return;
-        }
-        
-        DefaultTableModel model = (DefaultTableModel) tbtEmp.getModel();
-        Employee selectedEmployees = (Employee)model.getValueAt(selectedRowIndex, 0);
-        
+        //       int selectedRowIndex = tbtEmp.getSelectedRow();
+        //    if(selectedRowIndex<0){
+        //        JOptionPane.showMessageDialog(this, "Please select a row.");
+        //       return;
+        //  }
+        //   DefaultTableModel model = (DefaultTableModel) tbtEmp.getModel();
+        //    Employee selectedEmployees = (Employee)model.getValueAt(selectedRowIndex, 0);
+        //   txtLevel.setText(String.valueOf(selectedEmployee.getLevel()));
+        //          txtTeamInfo.setText(String.valueOf(selectedEmployee.getTeamInfo()));
+        //                   txtPosition.setText(String.valueOf(selectedEmployee.getPosition()));
+        //   imageicon
+        //   populateTable();
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
@@ -200,6 +218,14 @@ public class ViewJPanel extends javax.swing.JPanel {
         populateTable();
 
     }//GEN-LAST:event_btnDelActionPerformed
+
+    private void txtLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLevelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLevelActionPerformed
+
+    private void txtTeamInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTeamInfoActionPerformed
+    // TODO add your handling code here:
+    }//GEN-LAST:event_txtTeamInfoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -228,14 +254,13 @@ public class ViewJPanel extends javax.swing.JPanel {
       for (Employee vs : history.getHistory()){
           
           Object[] row = new Object[5];
-          row[0] = vs;
+          row[0] = vs.getName();
           row[1] = vs.getEmpId();
           row[2] = vs.getAge();
           row[3] = vs.getGender();
           row[4] = vs.getStartDate();
           
           model.addRow(row);
-          
       }
       
     }

@@ -13,11 +13,11 @@ import java.util.ArrayList;
 public class EmployeeHistory {
     
     private ArrayList<Employee> history;
-    
+    // created constructer to store new data
     public EmployeeHistory() {
         this.history = new ArrayList<Employee>();
     }
-
+    //created constructer to get data and set data
     public ArrayList<Employee> getHistory() {
         return history;
     }
@@ -25,7 +25,7 @@ public class EmployeeHistory {
     public void setHistory(ArrayList<Employee> history) {
         this.history = history;
     }
-    
+   //method to store which will called in createjpanel 
     public Employee addNewEmployee() {
         
         Employee newEmployees = new Employee();
